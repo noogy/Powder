@@ -9,6 +9,6 @@ class Particle:
         self.x += x
         self.y += y
 
-    def accel(self, x, y):
+    def xAccel(self, x):
         self.xSpeed += x
-        self.ySpeed += y
+
