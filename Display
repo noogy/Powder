@@ -1,0 +1,41 @@
+#imports
+import pygame, sys
+from particles import Particle
+from pygame.locals import *
+
+#Create Display
+pygame.init()
+DISPLAYSURF = pygame.display.set_mode((800,600))
+pygame.display.set_caption("Powder")
+
+#Create Color Constants
+BLACK = pygame.Color(0,0,0)
+BACKGROUND_COLOR = pygame.Color(255,255,255)
+
+#Create Particle Object
+particle = Particle(400,150)
+
+
+#Main Game Loop
+while True:
+    #Fill the surface white
+    DISPLAYSURF.fill(BACKGROUND_COLOR)
+    #Move particle in a rectangle
+    if int(particle.y) == 150:
+        particle.move(1, 0)
+    if int(particle.x) == 600:
+        particle.move(0, 1)
+    if int(particle.y) == 450:
+        particle.move(1, 0)
+    if int(particle.x) == 200:
+        particle.move(0, 1)
+    #Draw the rectangle
+    pygame.draw.rect(DISPLAYSURF, BLACK, (particle.x, particle.y, 5, 5))
+
+    #Loop to check for a key or mouse event
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+    #Updates game state every frame
+    pygame.display.update()
