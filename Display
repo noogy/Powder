@@ -26,15 +26,9 @@ while True:
     if int(particle.x) == 600:
         particle.move(0, 1)
     if int(particle.y) == 450:
-<<<<<<< HEAD
         particle.move(-1, 0)
     if int(particle.x) == 200:
         particle.move(0, -1)
-=======
-        particle.move(1, 0)
-    if int(particle.x) == 200:
-        particle.move(0, 1)
->>>>>>> d748d64ab4d75ed4a5e15a3c37d4841cd5b60d67
     #Draw the rectangle
     pygame.draw.rect(DISPLAYSURF, BLACK, (particle.x, particle.y, 5, 5))
 
